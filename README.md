@@ -10,7 +10,7 @@ After `--config` you can list one or more subread bam file(s) each as a key valu
 
 ### Dependencies
 
-Dependencies are managed with conda. Be sure to include the following in your `.bashrc` if you want to use the pre-computed conda env.
+Dependencies are managed with conda. If you are in the Stergachis lab be sure to include the following in your `.bashrc` if you want to use the pre-computed conda env.
 
 ```
 export SNAKEMAKE_CONDA_PREFIX=/mmfs1/gscratch/stergachislab/snakemake-conda-envs
