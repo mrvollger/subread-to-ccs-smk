@@ -24,10 +24,10 @@ def get_scatteritem_wc(wc):
 
 
 def get_ccs_splits(wc):
-    return (
-        expand(
-            rules.ccs_chunks.output.bam,
-            scatteritem=get_scatteritem_wc(wc),
-            allow_missing=True,
-        ),
+    rtn = expand(
+        rules.ccs_chunks.output.bam,
+        scatteritem=get_scatteritem_wc(wc),
+        allow_missing=True,
     )
+    print(rtn)
+    return rtn
