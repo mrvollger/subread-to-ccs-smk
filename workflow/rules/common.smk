@@ -4,11 +4,16 @@ def get_chunk(wc):
 
 
 def get_input_bam(wc):
-    return config[wc.sm]
-
+    bam = config[wc.sm]
+    if not os.path.exists(bam):
+        raise Exception(f"Missing input bam {bam}")
+    return bam
 
 def get_input_pbi(wc):
-    return f"{get_input_bam(wc)}.pbi"
+    index = f"{get_input_bam(wc)}.pbi"
+    if not os.path.exists(index):
+        raise Exception(f"Missing index {index}")
+    return index
 
 
 def get_number_of_chunks(wc):
