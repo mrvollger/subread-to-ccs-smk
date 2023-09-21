@@ -30,11 +30,7 @@ rule ccs_chunks:
 
 rule merge_ccs_chunks:
     input:
-        expand(
-            rules.ccs_chunks.output.bam,
-            scatteritem=get_scatteritem_wc,
-            allow_missing=True,
-        ),
+        get_ccs_splits,
     output:
         bam="results/{sm}/{sm}.ccs.with.kinetics.bam",
     resources:

@@ -21,3 +21,13 @@ def get_number_of_chunks(wc):
 def get_scatteritem_wc(wc):
     chunks = get_number_of_chunks(wc)
     return [f"{i}-of-{chunks}" for i in range(1, chunks + 1)]
+
+
+def get_ccs_splits(wc):
+    return (
+        expand(
+            rules.ccs_chunks.output.bam,
+            scatteritem=get_scatteritem_wc(wc),
+            allow_missing=True,
+        ),
+    )
