@@ -11,8 +11,9 @@ cluster: mkdir -p cluster_logs/{rule} &&
   --output=cluster_logs/{rule}/{rule}-{wildcards}-%j.out
   --export=all
   --parsable # Required to pass job IDs to scancel
-jobs: 1000
+jobs: 500
 local-cores: 16
+cluster-cancel: scancel
 cluster-cancel-nargs: 500 # cancel 500 jobs at a time, all will still be canceled
 latency-wait: 60
 max-jobs-per-second: 100
