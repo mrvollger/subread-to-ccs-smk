@@ -1,4 +1,4 @@
-rule ccs_chunks:
+rule ccs_chunk:
     input:
         bam=get_input_bam,
         pbi=get_input_pbi,
@@ -29,7 +29,7 @@ rule ccs_chunks:
 
 rule merge_ccs_chunks:
     input:
-        get_ccs_splits,
+        get_ccs_chunks,
     output:
         bam="results/{sm}.ccs.with.kinetics.bam",
     resources:
