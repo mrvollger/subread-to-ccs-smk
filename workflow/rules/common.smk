@@ -21,7 +21,7 @@ def get_number_of_chunks(wc):
     sample = wc.sm
     input_bam = config[sample]
     GB_size = os.path.getsize(input_bam) / 1024**3
-    return int(GB_size / 4) + 1
+    return int(GB_size / 2) + 1
 
 
 def get_scatteritem_wc(wc):
