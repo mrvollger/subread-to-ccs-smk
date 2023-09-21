@@ -1,9 +1,7 @@
-# \<your workflow name\>
+# subread-to-ccs-smk
 
-[![Actions Status](https://github.com/mrvollger/SmkTemplate/workflows/CI/badge.svg)](https://github.com/mrvollger/SmkTemplate/actions)
-[![Actions Status](https://github.com/mrvollger/SmkTemplate/workflows/Linting/badge.svg)](https://github.com/mrvollger/SmkTemplate/actions)
-[![Actions Status](https://github.com/mrvollger/SmkTemplate/workflows/black/badge.svg)](https://github.com/mrvollger/SmkTemplate/actions)
+Example
 
-This is a Snakemake project template. The `Snakefile` is under `workflow`.
-
-[Slides](https://mrvollger.github.io/SmkTemplate/slides) describing and justifying the use of this template.
+```bash
+snakemake --profile profiles/checkpoint --config m64076_221108_005936=/mmfs1/gscratch/stergachislab/data-store/PacBio-archive/m64076_221108_005936/m64076_221108_005936.subreads.bam
+```

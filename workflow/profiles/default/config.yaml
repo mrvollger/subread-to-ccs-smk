@@ -1,5 +1,5 @@
 default-resources:
-  - disk_mb=4096
+  - disk_mb=8096
   - mem_mb=8096
   - time=600
   - gpus=0
