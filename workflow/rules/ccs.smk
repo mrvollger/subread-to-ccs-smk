@@ -32,7 +32,7 @@ rule merge_ccs_chunks:
     input:
         get_ccs_splits,
     output:
-        bam="results/{sm}/{sm}.ccs.with.kinetics.bam",
+        bam="results/{sm}.ccs.with.kinetics.bam",
     resources:
         mem_mb=32 * 1024,
         disk_mb=32 * 1024,
