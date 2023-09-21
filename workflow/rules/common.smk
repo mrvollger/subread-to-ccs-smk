@@ -34,5 +34,4 @@ def get_ccs_splits(wc):
         scatteritem=get_scatteritem_wc(wc),
         allow_missing=True,
     )
-    print(rtn)
     return rtn
