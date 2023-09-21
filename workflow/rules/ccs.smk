@@ -1,4 +1,3 @@
-# NO CCS FILE PROVIDED SO WE MUST GENERATE ONE
 rule ccs_chunks:
     input:
         bam=get_input_bam,
