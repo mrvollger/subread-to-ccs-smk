@@ -47,7 +47,7 @@ rule merge_ccs_chunks:
     resources:
         mem_mb=32 * 1024,
         disk_mb=32 * 1024,
-        time=200,
+        time=500,
     threads: 24
     conda:
         "../envs/env.yml"
