@@ -8,7 +8,7 @@ rerun-incomplete: True
 rerun-triggers: mtime
 restart-times: 0
 show-failed-logs: True
-quiet: progress
+quiet: rules
 # reason: True
 # printshellcmds: True
 use-conda: True
