@@ -46,6 +46,7 @@ rule merge_ccs_chunks:
         fofn=rules.fofn.output.fofn,
     output:
         bam="results/{sm}.ccs.with.kinetics.bam",
+        pbi="results/{sm}.ccs.with.kinetics.bam.pbi",
     resources:
         mem_mb=32 * 1024,
         disk_mb=32 * 1024,
