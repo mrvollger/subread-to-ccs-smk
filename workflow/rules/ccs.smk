@@ -49,9 +49,10 @@ rule merge_ccs_chunks:
         disk_mb=32 * 1024,
         time=500,
     threads: 24
+    log: "logs/{sm}.merge.log"
     conda:
         "../envs/env.yml"
     shell:
         """
-        pbmerge -j {threads} -o {output.bam} {input.fofn}
+        pbmerge -j {threads} -o {output.bam} {input.fofn} &> {log}
         """
