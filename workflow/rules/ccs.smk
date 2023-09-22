@@ -3,10 +3,10 @@ rule ccs_chunk:
         bam=get_input_bam,
         pbi=get_input_pbi,
     output:
-        bam=temp("temp/{sm}/ccs.{scatteritem}.bam"),
-        pbi=temp("temp/{sm}/ccs.{scatteritem}.bam.pbi"),
-        json=temp("temp/{sm}/ccs.{scatteritem}.zmw_metrics.json.gz"),
-        txt=temp("temp/{sm}/ccs.{scatteritem}.ccs_report.txt"),
+        bam=temp("temp/{sm}.{scatteritem}.bam"),
+        pbi=temp("temp/{sm}.{scatteritem}.bam.pbi"),
+        json=temp("temp/{sm}.{scatteritem}.zmw_metrics.json.gz"),
+        txt=temp("temp/{sm}.{scatteritem}.ccs_report.txt"),
     resources:
         mem_mb=8 * 1024,
         disk_mb=8 * 1024,
