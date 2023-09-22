@@ -21,7 +21,7 @@ def get_number_of_chunks(wc):
     sample = wc.sm
     input_bam = config[sample]
     GB_size = os.path.getsize(input_bam) / 1024**3
-    chunks = max(50 * int(GB_size / 50), 1)
+    chunks = max(50 * int(GB_size / 50 + 1), 1)
     return chunks
 
 
