@@ -56,5 +56,5 @@ rule merge_ccs_chunks:
         "../envs/env.yml"
     shell:
         """
-        pbmerge -j {threads} -o {output.bam} {input.fofn} &> {log}
+        (pbmerge -j {threads} -o {output.bam} {input.fofn}) &> {log}
         """
