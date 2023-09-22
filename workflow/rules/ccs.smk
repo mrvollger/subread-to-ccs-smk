@@ -47,14 +47,14 @@ rule merge_ccs_chunks:
     output:
         bam="results/{sm}.ccs.with.kinetics.bam",
     resources:
-        mem_mb=64 * 1024,
+        mem_mb=32 * 1024,
         disk_mb=32 * 1024,
         time=500,
-    threads: 24
-    log: "logs/{sm}.merge.log"
+    threads: 8
     conda:
         "../envs/env.yml"
     shell:
         """
-        (pbmerge -j {threads} -o {output.bam} {input.fofn}) &> {log}
+        samtools cat -@ {threads} -b {input.fofn} -o {output.bam}
+        pbindex -j {threads} {output.bam}
         """
