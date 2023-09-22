@@ -7,7 +7,8 @@ default-resources:
 rerun-incomplete: True
 rerun-triggers: mtime
 restart-times: 0
-printshellcmds: True
+#printshellcmds: True
+quiet: progress
 reason: True
 use-conda: True
 use-singularity: True
