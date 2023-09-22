@@ -27,9 +27,21 @@ rule ccs_chunk:
         """
 
 
+rule fofn:
+    input:
+        chunks=get_ccs_chunks,
+    output:
+        fofn=temp("temp/{sm}.ccs_chunks.fofn"),
+    threads: 1
+    run:
+        with open(output.fofn, "w") as f:
+            [f.write(f"{chunk}\n") for chunk in input.chunks]
+
+
 rule merge_ccs_chunks:
     input:
-        get_ccs_chunks,
+        chunks=get_ccs_chunks,
+        fofn=rules.fofn.output.fofn,
     output:
         bam="results/{sm}.ccs.with.kinetics.bam",
     resources:
@@ -41,5 +53,5 @@ rule merge_ccs_chunks:
         "../envs/env.yml"
     shell:
         """
-        pbmerge -j {threads} -o {output.bam} {input}
+        pbmerge -j {threads} -o {output.bam} {input.fofn}
         """
