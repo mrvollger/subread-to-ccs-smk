@@ -3,7 +3,7 @@ default-resources:
   - mem_mb=8096
   - time=600
   - gpus=0
-scheduler: greedy
+#scheduler: greedy
 rerun-incomplete: True
 rerun-triggers: mtime
 restart-times: 0
