@@ -1,3 +1,5 @@
+import os
+
 rule ccs_chunk:
     input:
         bam=get_input_bam,
@@ -35,7 +37,7 @@ rule fofn:
     threads: 1
     run:
         with open(output.fofn, "w") as f:
-            [f.write(f"{chunk}\n") for chunk in input.chunks]
+            [f.write(f"{os.path.abspath(chunk)}\n") for chunk in input.chunks]
 
 
 rule merge_ccs_chunks:
